@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nju.edu.erp.dao.WageSheetDao">
+    <insert id="saveSheet">
+        insert into wage_sheet (id, operator, employee_id, name, `state`, bank_account, create_time, total_amount, tax, final_amount)
+        values (#{id}, #{operator}, #{employeeId}, #{name}, #{state}, #{bankAccount}, #{createTime}, #{totalAmount}, #{tax}, #{finalAmount});
+    </insert>
+
+    <update id="updateSheetState">
+        update wage_sheet
+        set state = #{state}
+        where id = #{sheetId}
+    </update>
+
+    <update id="updateSheetStateOnPrev">
+        update wage_sheet
+        set state = #{state}
+        where id = #{sheetId}
+          and state = #{prev}
+    </update>
+
+    <select id="getLatestSheet" resultType="com.nju.edu.erp.model.po.WageSheetPO">
+        select *
+        from wage_sheet
+        order by id desc
+        limit 0,1;
+    </select>
+
+    <select id="findAllSheet" resultType="com.nju.edu.erp.model.po.WageSheetPO">
+        select *
+        from wage_sheet;
+    </select>
+
+    <select id="findAllByState" resultType="com.nju.edu.erp.model.po.WageSheetPO">
+        select *
+        from wage_sheet
+        where state = #{state}
+    </select>
+
+    <select id="findSheetById" resultType="com.nju.edu.erp.model.po.WageSheetPO">
+        select *
+        from wage_sheet
+        where id = #{id};
+    </select>
+
+    <resultMap id="WageSheetPO" type="com.nju.edu.erp.model.po.WageSheetPO">
+        <id column="id" property="id"></id>
+        <result column="employee_id" property="employeeId"></result>
+        <result column="name" property="name"></result>
+        <result column="operator" property="operator"></result>
+        <result column="state" property="state"></result>
+        <result column="total_amount" property="totalAmount"></result>
+        <result column="tax" property="tax"></result>
+        <result column="final_amount" property="finalAmount"></result>
+        <result column="create_time" property="createTime"></result>
+    </resultMap>
+
+    <select id="getSalaryByTime" resultType="int">
+        select coalesce(SUM(total_amount), 0)
+        from wage_sheet
+        where create_time between #{beginTime} and #{endTime}
+          and state = '审批完成';
+    </select>
+</mapper>

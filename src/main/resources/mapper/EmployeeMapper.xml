@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nju.edu.erp.dao.EmployeeDao">
+    <insert id="addEmployeeSql">
+        insert into employee (`id`, `name`, `sex`, `birthday`, `phone_number`)
+        values (#{id}, #{name}, #{sex}, #{birthday}, #{phoneNumber})
+    </insert>
+
+
+    <update id="updateEmployeeSql" parameterType="com.nju.edu.erp.model.po.EmployeePO">
+        update employee
+        <set>
+            <if test="name != null">
+                `name` = #{name},
+            </if>
+            <if test="sex != null">
+                `sex` = #{sex},
+            </if>
+            <if test="birthday != null">
+                `birthday` = #{birthday},
+            </if>
+            <if test="phoneNumber != null">
+                `phone_number` = #{phoneNumber}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteEmployeeSql">
+        delete
+        from employee
+        where id = #{id}
+    </delete>
+
+
+    <select id="findEmployeeSql" resultType="com.nju.edu.erp.model.po.EmployeePO">
+        select *
+        from employee
+        where `id` = #{id}
+    </select>
+
+    <select id="findAllEmployee" resultType="com.nju.edu.erp.model.po.EmployeeWageIODetailPO">
+        select e.id, e.name, e.sex, e.birthday, e.phone_number, ep.position
+        from employee e,
+             employee_post ep
+        where e.id = ep.id
+          and ep.position != "总经理";
+    </select>
+
+    <select id="findGeneralInfoUnion" resultType="com.nju.edu.erp.model.po.EmployeeInfoUnionGeneralPO">
+        select e.id, e.name, e.sex, e.birthday, e.phone_number, ep.bank_account, ep.position, ep.salary_calculation_strategy
+        from employee e,
+        employee_post ep
+        where e.id = ep.id
+    </select>
+
+    <select id="findMonthlyInfoUnion" resultType="com.nju.edu.erp.model.po.EmployeeInfoUnionMonthlyPO">
+        select e.id, e.name, e.sex, e.birthday, e.phone_number, ep.bank_account, ep.position, ep.salary_calculation_strategy, m.base_salary, m.post_salary, m.post_rank
+        from employee e,
+             employee_post ep,
+             monthly_pay m
+        where e.id = ep.id
+          and e.id = m.id
+    </select>
+
+    <select id="findYearlyInfoUnion" resultType="com.nju.edu.erp.model.po.EmployeeInfoUnionYearlyPO">
+        select e.id, e.name, e.sex, e.birthday, e.phone_number, ep.bank_account, ep.position, ep.salary_calculation_strategy, y.yearly_salary
+        from employee e,
+             employee_post ep,
+             yearly_pay y
+        where e.id = ep.id
+          and e.id = y.id
+    </select>
+
+    <select id="findCommissionInfoUnion" resultType="com.nju.edu.erp.model.po.EmployeeInfoUnionCommissionPO">
+        select e.id, e.name, e.sex, e.birthday, e.phone_number, ep.bank_account, ep.position, ep.salary_calculation_strategy, c.base_salary, c.commission_rate
+        from employee e,
+             employee_post ep,
+             base_and_commission c
+        where e.id = ep.id
+          and e.id = c.id
+    </select>
+</mapper>

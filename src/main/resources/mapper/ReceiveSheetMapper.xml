@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nju.edu.erp.dao.ReceiveSheetDao">
+    <insert id="saveSheet">
+        insert into receive_sheet (id, customer, operator, `state`, create_time, total_amount)
+        values (#{id}, #{customer}, #{operator}, #{state}, #{createTime}, #{totalAmount});
+    </insert>
+
+    <insert id="saveBatchSheetContent" useGeneratedKeys="true" keyProperty="id">
+        insert into receive_sheet_content (receive_sheet_id, bank_account,amount,remark) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.receiveSheetId},#{item.bankAccount},#{item.amount},#{item.remark})
+        </foreach>
+    </insert>
+
+    <update id="updateSheetState">
+        update receive_sheet
+        set state = #{state}
+        where id = #{sheetId}
+    </update>
+
+    <update id="updateSheetStateOnPrev">
+        update receive_sheet
+        set state = #{state}
+        where id = #{sheetId}
+          and state = #{prev}
+    </update>
+
+    <select id="getLatestSheet" resultType="com.nju.edu.erp.model.po.ReceiveSheetPO">
+        select *
+        from receive_sheet
+        order by id desc
+        limit 0,1;
+    </select>
+
+    <select id="findAllSheet" resultType="com.nju.edu.erp.model.po.ReceiveSheetPO">
+        select *
+        from receive_sheet;
+    </select>
+
+    <select id="findAllByState" resultType="com.nju.edu.erp.model.po.ReceiveSheetPO">
+        select *
+        from receive_sheet
+        where state = #{state}
+    </select>
+
+    <select id="findContentBySheetId" resultType="com.nju.edu.erp.model.po.ReceiveSheetContentPO">
+        select *
+        from receive_sheet_content
+        where receive_sheet_id = #{sheetId};
+    </select>
+
+    <select id="findSheetById" resultType="com.nju.edu.erp.model.po.ReceiveSheetPO">
+        select *
+        from receive_sheet
+        where id = #{id};
+    </select>
+
+    <resultMap id="ReceiveSheetPO" type="com.nju.edu.erp.model.po.ReceiveSheetPO">
+        <id column="id" property="id"></id>
+        <result column="customer" property="customer"></result>
+        <result column="operator" property="operator"></result>
+        <result column="state" property="state"></result>
+        <result column="total_amount" property="totalAmount"></result>
+        <result column="create_time" property="createTime"></result>
+    </resultMap>
+
+    <resultMap id="ReceiveSheetContentPO" type="com.nju.edu.erp.model.po.ReceiveSheetContentPO">
+        <id column="id" property="id"></id>
+        <result column="receive_sheet_id" property="receiveSheetId"></result>
+        <result column="bank_account" property="bankAccount"></result>
+        <result column="total_amount" property="amount"></result>
+        <result column="remark" property="remark"></result>
+    </resultMap>
+</mapper>

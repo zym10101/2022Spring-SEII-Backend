@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nju.edu.erp.dao.SalaryStrategyDao">
+
+    <insert id="setMonthlyParaSql">
+        insert into monthly_pay (`id`,`base_salary`,`post_salary`,`post_rank`)
+        values (#{id}, #{baseSalary}, #{postSalary}, #{postRank})
+    </insert>
+
+    <insert id="setBaseAndCommissionParaSql">
+        insert into base_and_commission (`id`,`base_salary`,`commission_rate`,`actual_sales`)
+        values (#{id}, #{baseSalary}, #{commissionRate}, #{actualSales})
+    </insert>
+
+    <insert id="setYearlyParaSql">
+        insert into yearly_pay (`id`,`yearly_salary`)
+        values (#{id}, #{yearlySalary})
+    </insert>
+
+    <select id="getMonthlyInfo" resultType="com.nju.edu.erp.model.po.MonthlyPayPO">
+        select *
+        from monthly_pay
+        where `id` = #{id}
+    </select>
+
+    <select id="getBaseAndCommissionInfo" resultType="com.nju.edu.erp.model.po.BaseAndCommissionPO">
+        select *
+        from base_and_commission
+        where `id` = #{id}
+    </select>
+
+    <select id="getYearlyInfo" resultType="com.nju.edu.erp.model.po.YearlyPayPO">
+        select *
+        from yearly_pay
+        where `id` = #{id}
+    </select>
+
+
+
+</mapper>

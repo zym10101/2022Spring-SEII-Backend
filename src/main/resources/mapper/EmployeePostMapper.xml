@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nju.edu.erp.dao.EmployeePostDao">
+    <insert id="addEmployeePostSql">
+        insert into employee_post (`id`, `bank_account`, `position`, `salary_calculation_strategy`)
+        values (#{id}, #{bankAccount}, #{position}, #{salaryCalculationStrategy})
+    </insert>
+
+    <update id="updateEmployeePostSql" parameterType="com.nju.edu.erp.model.po.EmployeePostPO">
+        update employee_post
+        <set>
+            <if test="bankAccount != null">
+                `bank_account` = #{bankAccount},
+            </if>
+            <if test="position != null">
+                `position` = #{position},
+            </if>
+            <if test="salaryCalculationStrategy != null">
+                `salary_calculation_strategy` = #{salaryCalculationStrategy},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteEmployeePostSql">
+        delete
+        from employee_post
+        where id = #{id}
+    </delete>
+
+    <select id="findEmployeePostById" resultType="com.nju.edu.erp.model.po.EmployeePostPO">
+        select *
+        from employee_post
+        where `id` = #{id}
+    </select>
+
+    <update id="setCalResultSql">
+        update employee_post
+        set salary_strategy_result=#{salaryStrategyResult}
+        where `id` = #{id}
+    </update>
+
+
+    <update id="setYearBonusResultSql">
+        update employee_post
+        set year_bonus=#{yearBonus}
+        where `id` = #{id}
+    </update>
+
+    <select id="getYearBonusSql" resultType="int">
+        select year_bonus
+        from employee_post
+        where `id` = #{id}
+    </select>
+
+    <insert id="setMonthlyParaSql" >
+        insert into monthly_pay (`id`, `base_salary`, `post_salary`, `post_rank`)
+        values (#{id}, #{baseSalary}, #{postSalary}, #{postRank})
+    </insert>
+
+    <insert id="setBaseAndCommissionParaSql" parameterType="com.nju.edu.erp.model.po.BaseAndCommissionPO">
+        insert into base_and_commission (`id`, `base_salary`, `commission_rate`, `actual_sales`)
+        values (#{id}, #{baseSalary}, #{commissionRate}, #{actualSales})
+    </insert>
+
+    <insert id="setYearlyParaSql">
+        insert into yearly_pay (`id`, `yearly_salary`)
+        values (#{id}, #{yearlySalary})
+    </insert>
+
+    <select id="getMonthlyParaSql" resultType="com.nju.edu.erp.model.po.MonthlyPayPO">
+        select *
+        from monthly_pay
+        where `id` = #{id}
+    </select>
+
+    <select id="getBaseAndCommissionParaSql" resultType="com.nju.edu.erp.model.po.BaseAndCommissionPO">
+        select *
+        from base_and_commission
+        where `id` = #{id}
+    </select>
+
+    <select id="getYearlyParaSql" resultType="com.nju.edu.erp.model.po.YearlyPayPO">
+        select *
+        from yearly_pay
+        where `id` = #{id}
+    </select>
+
+    <update id="updateMonthlyParaSql" parameterType="com.nju.edu.erp.model.po.MonthlyPayPO">
+        update monthly_pay
+        <set>
+            <if test="baseSalary != null">
+                `base_salary` = #{baseSalary},
+            </if>
+            <if test="postSalary != null">
+                `post_salary` = #{postSalary},
+            </if>
+            <if test="postRank != null">
+                `post_rank` = #{postRank},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="updateBaseAndCommissionParaSql" parameterType="com.nju.edu.erp.model.po.BaseAndCommissionPO">
+        update base_and_commission
+        <set>
+            <if test="baseSalary != null">
+                `base_salary` = #{baseSalary},
+            </if>
+            <if test="commissionRate != null">
+                `commission_rate` = #{commissionRate},
+            </if>
+            <if test="actualSales != null">
+                `actual_sales` = #{actualSales},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="updateYearlyParaSql" parameterType="com.nju.edu.erp.model.po.YearlyPayPO">
+        update yearly_pay
+        <set>
+            <if test="yearlySalary != null">
+                `yearly_salary` = #{yearlySalary},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteMonthlyParaSql">
+        delete
+        from monthly_pay
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteBaseAndCommissionParaSql">
+        delete
+        from base_and_commission
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteYearlyParaSql">
+        delete
+        from yearly_pay
+        where id = #{id}
+    </delete>
+
+    <update id="setActualSalesSql">
+        update base_and_commission
+        set actual_sales = #{actualSales}
+        where `id` = #{id}
+    </update>
+</mapper>

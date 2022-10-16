@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nju.edu.erp.dao.FinancialSheetDao">
+    <select id="getPayReceiveSheet" resultMap="PayReceiveSheetIODetailPO">
+        select "pay" type,
+               id,
+               customer,
+               operator,
+               state,
+               create_time,
+               total_amount
+        from pay_sheet
+        where create_time between #{beginTime} and #{endTime}
+        union all
+        select "receive" type,
+               id,
+               customer,
+               operator,
+               state,
+               create_time,
+               total_amount
+        from receive_sheet
+        where create_time between #{beginTime} and #{endTime};
+    </select>
+    <resultMap id="PayReceiveSheetIODetailPO" type="com.nju.edu.erp.model.po.PayReceiveSheetIODetailPO">
+        <id column="id" property="id"></id>
+        <result column="customer" property="customer"></result>
+        <result column="operator" property="operator"></result>
+        <result column="state" property="state"></result>
+        <result column="total_amount" property="totalAmount"></result>
+        <result column="create_time" property="createTime"></result>
+    </resultMap>
+
+    <select id="getWageSheet" resultType="com.nju.edu.erp.model.po.WageSheetPO">
+        select *
+        from wage_sheet
+        where create_time between #{beginTime} and #{endTime};
+    </select>
+</mapper>
+

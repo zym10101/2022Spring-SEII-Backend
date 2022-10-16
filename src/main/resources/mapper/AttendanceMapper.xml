@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nju.edu.erp.dao.AttendanceDao">
+    <insert id="addAttendanceSql" parameterType="com.nju.edu.erp.model.po.AttendancePO">
+        insert into attendance (`attendance_no`, `employee_id`, `attendance_date`)
+        values (#{attendanceNo}, #{employeeId}, #{attendanceDate})
+    </insert>
+
+    <select id="findAttendanceById" resultType="com.nju.edu.erp.model.po.AttendancePO">
+        select *
+        from attendance
+        where employee_id = #{employeeId};
+    </select>
+
+    <select id="findAttendanceByNo" resultType="com.nju.edu.erp.model.po.AttendancePO">
+        select *
+        from attendance
+        where attendance_no = #{attendanceNo};
+    </select>
+    <select id="findAttendanceByTime" resultType="com.nju.edu.erp.model.po.EmployeeAttendanceIODetailPO">
+        select e.id, e.name, e.sex, e.birthday, e.phone_number, ep.position, a.attendance_date
+        from employee e,
+             employee_post ep,
+             attendance a
+        where e.id = ep.id
+          and e.id = a.employee_id
+          and a.attendance_date between #{beginTime} and #{endTime};
+    </select>
+
+    <update id="updateBaseSalaryMonthlySql">
+        update monthly_pay
+        set base_salary = base_salary * 29 / 30
+        where id = #{id};
+    </update>
+
+    <update id="updateBaseSalaryCommissionSql">
+        update base_and_commission
+        set base_salary = base_salary * 29 / 30
+        where id = #{id};
+    </update>
+</mapper>

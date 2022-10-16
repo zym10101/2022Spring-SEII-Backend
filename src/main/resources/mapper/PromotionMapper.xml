@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nju.edu.erp.dao.PromotionDao">
+    <update id="updateUserLevelPromotionByLevel">
+        update user_level_promotion
+        set gift_name=#{giftName},
+            discount=#{discount},
+            voucher=#{voucher},
+            begin_time=#{beginTime},
+            end_time=#{endTime}
+        where user_level = #{userLevel};
+    </update>
+
+
+    <update id="updateTotalAmountPromotionByAmount">
+        update total_amount_promotion
+        set gift_name=#{giftName},
+            voucher=#{voucher},
+            begin_time=#{beginTime},
+            end_time=#{endTime}
+        where total_amount_min = #{totalAmountMin};
+    </update>
+
+    <resultMap id="UserLevelPromotionPO" type="com.nju.edu.erp.model.po.UserLevelPromotionPO">
+        <result column="user_level" property="userLevel"></result>
+        <result column="gift_name" property="giftName"></result>
+        <result column="discount" property="discount"></result>
+        <result column="voucher" property="voucher"></result>
+    </resultMap>
+
+    <resultMap id="TotalAmountPromotionPO" type="com.nju.edu.erp.model.po.TotalAmountPromotionPO">
+        <result column="total_amount_min" property="totalAmountMin"></result>
+        <result column="gift_name" property="giftName"></result>
+        <result column="voucher" property="voucher"></result>
+    </resultMap>
+
+    <select id="findLevelAll" resultMap="UserLevelPromotionPO">
+        select *
+        from user_level_promotion
+    </select>
+
+    <select id="findAmountAll" resultMap="TotalAmountPromotionPO">
+        select *
+        from total_amount_promotion
+    </select>
+
+    <delete id="deleteTotalAmountPromotionById">
+        delete
+        from total_amount_promotion
+        where total_amount_min = #{id};
+    </delete>
+
+    <insert id="addTotalAmountPromotion">
+        insert into total_amount_promotion
+        values (#{totalAmountMin}, #{giftName}, #{voucher}, #{beginTime}, #{endTime})
+    </insert>
+
+    <select id="findOneByLevel" resultMap="UserLevelPromotionPO">
+        select *
+        from user_level_promotion
+        where user_level = #{userLevel};
+    </select>
+
+    <select id="findAmountNumAll" resultType="java.lang.Integer">
+        select total_amount_min
+        from total_amount_promotion;
+    </select>
+
+    <select id="findOneByAmount" resultMap="TotalAmountPromotionPO">
+        select *
+        from total_amount_promotion
+        where total_amount_min = #{amount};
+    </select>
+</mapper>

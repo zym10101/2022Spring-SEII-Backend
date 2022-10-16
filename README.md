@@ -1,2 +1,3 @@
-# 2022Spring-SEII-Backend
-2022春-软件工程与计算II-后端
+# SEECII-ERP
+
+2022 软工二大作业demo
