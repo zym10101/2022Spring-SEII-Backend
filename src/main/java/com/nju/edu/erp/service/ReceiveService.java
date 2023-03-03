@@ -1,7 +1,7 @@
 package com.nju.edu.erp.service;
 
 import com.nju.edu.erp.enums.sheetState.ReceiveSheetState;
-import com.nju.edu.erp.model.vo.UserVO;
+import com.nju.edu.erp.model.vo.user.UserVO;
 import com.nju.edu.erp.model.vo.receive.ReceiveSheetVO;
 import org.springframework.stereotype.Service;
 

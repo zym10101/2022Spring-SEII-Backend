@@ -26,37 +26,37 @@
           and state = #{prev}
     </update>
 
-    <select id="getLatestSheet" resultType="com.nju.edu.erp.model.po.ReceiveSheetPO">
+    <select id="getLatestSheet" resultType="com.nju.edu.erp.model.po.receive.ReceiveSheetPO">
         select *
         from receive_sheet
         order by id desc
         limit 0,1;
     </select>
 
-    <select id="findAllSheet" resultType="com.nju.edu.erp.model.po.ReceiveSheetPO">
+    <select id="findAllSheet" resultType="com.nju.edu.erp.model.po.receive.ReceiveSheetPO">
         select *
         from receive_sheet;
     </select>
 
-    <select id="findAllByState" resultType="com.nju.edu.erp.model.po.ReceiveSheetPO">
+    <select id="findAllByState" resultType="com.nju.edu.erp.model.po.receive.ReceiveSheetPO">
         select *
         from receive_sheet
         where state = #{state}
     </select>
 
-    <select id="findContentBySheetId" resultType="com.nju.edu.erp.model.po.ReceiveSheetContentPO">
+    <select id="findContentBySheetId" resultType="com.nju.edu.erp.model.po.receive.ReceiveSheetContentPO">
         select *
         from receive_sheet_content
         where receive_sheet_id = #{sheetId};
     </select>
 
-    <select id="findSheetById" resultType="com.nju.edu.erp.model.po.ReceiveSheetPO">
+    <select id="findSheetById" resultType="com.nju.edu.erp.model.po.receive.ReceiveSheetPO">
         select *
         from receive_sheet
         where id = #{id};
     </select>
 
-    <resultMap id="ReceiveSheetPO" type="com.nju.edu.erp.model.po.ReceiveSheetPO">
+    <resultMap id="ReceiveSheetPO" type="com.nju.edu.erp.model.po.receive.ReceiveSheetPO">
         <id column="id" property="id"></id>
         <result column="customer" property="customer"></result>
         <result column="operator" property="operator"></result>
@@ -65,7 +65,7 @@
         <result column="create_time" property="createTime"></result>
     </resultMap>
 
-    <resultMap id="ReceiveSheetContentPO" type="com.nju.edu.erp.model.po.ReceiveSheetContentPO">
+    <resultMap id="ReceiveSheetContentPO" type="com.nju.edu.erp.model.po.receive.ReceiveSheetContentPO">
         <id column="id" property="id"></id>
         <result column="receive_sheet_id" property="receiveSheetId"></result>
         <result column="bank_account" property="bankAccount"></result>

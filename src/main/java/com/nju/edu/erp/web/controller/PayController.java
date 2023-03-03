@@ -4,15 +4,12 @@ package com.nju.edu.erp.web.controller;
 import com.nju.edu.erp.auth.Authorized;
 import com.nju.edu.erp.enums.Role;
 import com.nju.edu.erp.enums.sheetState.PaySheetState;
-import com.nju.edu.erp.model.vo.UserVO;
+import com.nju.edu.erp.model.vo.user.UserVO;
 import com.nju.edu.erp.model.vo.pay.PaySheetVO;
 import com.nju.edu.erp.service.PayService;
 import com.nju.edu.erp.web.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.text.ParseException;
-import java.util.List;
 
 @RestController
 @RequestMapping(path = "/pay")

@@ -1,8 +1,8 @@
 package com.nju.edu.erp.dao;
 
-import com.nju.edu.erp.model.po.BaseAndCommissionPO;
-import com.nju.edu.erp.model.po.MonthlyPayPO;
-import com.nju.edu.erp.model.po.YearlyPayPO;
+import com.nju.edu.erp.model.po.salary.BaseAndCommissionPO;
+import com.nju.edu.erp.model.po.salary.MonthlyPayPO;
+import com.nju.edu.erp.model.po.salary.YearlyPayPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

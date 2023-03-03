@@ -22,7 +22,7 @@
         from receive_sheet
         where create_time between #{beginTime} and #{endTime};
     </select>
-    <resultMap id="PayReceiveSheetIODetailPO" type="com.nju.edu.erp.model.po.PayReceiveSheetIODetailPO">
+    <resultMap id="PayReceiveSheetIODetailPO" type="com.nju.edu.erp.model.po.pay.PayReceiveSheetIODetailPO">
         <id column="id" property="id"></id>
         <result column="customer" property="customer"></result>
         <result column="operator" property="operator"></result>
@@ -31,7 +31,7 @@
         <result column="create_time" property="createTime"></result>
     </resultMap>
 
-    <select id="getWageSheet" resultType="com.nju.edu.erp.model.po.WageSheetPO">
+    <select id="getWageSheet" resultType="com.nju.edu.erp.model.po.salary.WageSheetPO">
         select *
         from wage_sheet
         where create_time between #{beginTime} and #{endTime};

@@ -2,7 +2,7 @@ package com.nju.edu.erp.model.vo.warehouse;
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import cn.afterturn.easypoi.excel.annotation.ExcelEntity;
-import com.nju.edu.erp.model.vo.ProductInfoVO;
+import com.nju.edu.erp.model.vo.product.ProductInfoVO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

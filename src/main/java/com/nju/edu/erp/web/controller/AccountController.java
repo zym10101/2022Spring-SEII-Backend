@@ -2,7 +2,7 @@ package com.nju.edu.erp.web.controller;
 
 import com.nju.edu.erp.auth.Authorized;
 import com.nju.edu.erp.enums.Role;
-import com.nju.edu.erp.model.vo.AccountVO;
+import com.nju.edu.erp.model.vo.employee.AccountVO;
 import com.nju.edu.erp.service.AccountService;
 import com.nju.edu.erp.web.Response;
 import org.springframework.beans.factory.annotation.Autowired;

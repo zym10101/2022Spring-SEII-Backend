@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nju.edu.erp.dao.ProductDao">
-    <update id="updateById" parameterType="com.nju.edu.erp.model.po.ProductPO">
+    <update id="updateById" parameterType="com.nju.edu.erp.model.po.product.ProductPO">
         update product
         <set>
             <if test="name != null">
@@ -29,7 +29,7 @@
         where id = #{id}
     </update>
 
-    <insert id="createProduct" parameterType="com.nju.edu.erp.model.po.ProductPO">
+    <insert id="createProduct" parameterType="com.nju.edu.erp.model.po.product.ProductPO">
         insert into product (id, `name`, category_id, `type`, quantity, purchase_price, retail_price)
         values (#{id}, #{name}, #{categoryId}, #{type}, 0, #{purchasePrice}, #{retailPrice})
     </insert>
@@ -57,7 +57,7 @@
         where id = #{id}
     </delete>
 
-    <resultMap id="ProductPO" type="com.nju.edu.erp.model.po.ProductPO">
+    <resultMap id="ProductPO" type="com.nju.edu.erp.model.po.product.ProductPO">
         <id column="id" property="id"></id>
         <result column="name" property="name"></result>
         <result column="category_id" property="categoryId"></result>

@@ -28,38 +28,38 @@
           and state = #{prev}
     </update>
 
-    <select id="getLatestSheet" resultType="com.nju.edu.erp.model.po.SaleSheetPO">
+    <select id="getLatestSheet" resultType="com.nju.edu.erp.model.po.sale.SaleSheetPO">
         select *
         from sale_sheet
         order by id desc
         limit 0,1;
     </select>
 
-    <select id="findAllSheet" resultType="com.nju.edu.erp.model.po.SaleSheetPO">
+    <select id="findAllSheet" resultType="com.nju.edu.erp.model.po.sale.SaleSheetPO">
         select *
         from sale_sheet;
     </select>
 
-    <select id="findAllByState" resultType="com.nju.edu.erp.model.po.SaleSheetPO">
+    <select id="findAllByState" resultType="com.nju.edu.erp.model.po.sale.SaleSheetPO">
         select *
         from sale_sheet
         where state = #{state}
     </select>
 
-    <select id="findContentBySheetId" resultType="com.nju.edu.erp.model.po.SaleSheetContentPO">
+    <select id="findContentBySheetId" resultType="com.nju.edu.erp.model.po.sale.SaleSheetContentPO">
         select *
         from sale_sheet_content
         where sale_sheet_id = #{sheetId};
     </select>
 
-    <select id="findSheetById" resultType="com.nju.edu.erp.model.po.SaleSheetPO">
+    <select id="findSheetById" resultType="com.nju.edu.erp.model.po.sale.SaleSheetPO">
         select *
         from sale_sheet
         where id = #{id};
     </select>
 
     <!--获取某个销售人员某段时间内消费总金额最大的客户(不考虑退货情况,销售单不需要审批通过,如果这样的客户有多个，仅保留一个)-->
-    <select id="getMaxAmountCustomerOfSalesmanByTime" resultType="com.nju.edu.erp.model.po.CustomerPurchaseAmountPO">
+    <select id="getMaxAmountCustomerOfSalesmanByTime" resultType="com.nju.edu.erp.model.po.customer.CustomerPurchaseAmountPO">
         select c.id                as id,
                c.type              as type,
                c.level             as level,
@@ -83,7 +83,7 @@
         order by total_final_amount
         limit 1;
     </select>
-    <select id="getSaleSheetIODetailByTime" resultType="com.nju.edu.erp.model.po.SaleSheetIODetailPO">
+    <select id="getSaleSheetIODetailByTime" resultType="com.nju.edu.erp.model.po.saleIO.SaleSheetIODetailPO">
         select "sale"                      type,
                s.id                        sheet_id,
                p.name                      product_name,
@@ -115,9 +115,9 @@
           and state = '审批完成';
     </select>
 
-    <resultMap id="CustomerPurchaseAmountPO" type="com.nju.edu.erp.model.po.CustomerPurchaseAmountPO">
+    <resultMap id="CustomerPurchaseAmountPO" type="com.nju.edu.erp.model.po.customer.CustomerPurchaseAmountPO">
         <result column="total_final_amount" property="totalFinalAmount"></result>
-        <association property="customerPO" javaType="com.nju.edu.erp.model.po.CustomerPO">
+        <association property="customerPO" javaType="com.nju.edu.erp.model.po.customer.CustomerPO">
             <id column="id" property="id"></id>
             <result column="type" property="type"></result>
             <result column="level" property="level"></result>
@@ -172,7 +172,7 @@
     </select>
 
 
-    <select id="getSaleIODetailByTime" resultType="com.nju.edu.erp.model.po.SaleIODetailPO">
+    <select id="getSaleIODetailByTime" resultType="com.nju.edu.erp.model.po.saleIO.SaleIODetailPO">
         select "sale"                      type,
         s.id                        sheet_id,
         p.name                      product_name,
@@ -216,7 +216,7 @@
         and sr.state = '审批完成';
     </select>
 
-    <resultMap id="SaleIODetailPO" type="com.nju.edu.erp.model.po.SaleIODetailPO">
+    <resultMap id="SaleIODetailPO" type="com.nju.edu.erp.model.po.saleIO.SaleIODetailPO">
         <result column="type" property="type"></result>
         <result column="sheet_id" property="sheetId"></result>
         <result column="product_name" property="productName"></result>

@@ -1,6 +1,6 @@
 package com.nju.edu.erp.service;
 
-import com.nju.edu.erp.model.vo.CategoryVO;
+import com.nju.edu.erp.model.vo.product.CategoryVO;
 
 import java.util.List;
 

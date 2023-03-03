@@ -2,8 +2,8 @@ package com.nju.edu.erp.dao;
 
 
 import com.nju.edu.erp.enums.sheetState.PaySheetState;
-import com.nju.edu.erp.model.po.PaySheetContentPO;
-import com.nju.edu.erp.model.po.PaySheetPO;
+import com.nju.edu.erp.model.po.pay.PaySheetContentPO;
+import com.nju.edu.erp.model.po.pay.PaySheetPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

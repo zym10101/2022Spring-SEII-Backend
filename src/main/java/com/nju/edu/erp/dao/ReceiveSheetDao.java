@@ -2,13 +2,11 @@ package com.nju.edu.erp.dao;
 
 
 import com.nju.edu.erp.enums.sheetState.ReceiveSheetState;
-import com.nju.edu.erp.model.po.ReceiveSheetContentPO;
-import com.nju.edu.erp.model.po.ReceiveSheetPO;
-import com.nju.edu.erp.model.po.SaleSheetPO;
+import com.nju.edu.erp.model.po.receive.ReceiveSheetContentPO;
+import com.nju.edu.erp.model.po.receive.ReceiveSheetPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-import java.util.Date;
 import java.util.List;
 
 @Repository

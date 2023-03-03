@@ -2,8 +2,8 @@ package com.nju.edu.erp.service.Impl;
 
 import com.nju.edu.erp.dao.AccountDao;
 import com.nju.edu.erp.exception.MyServiceException;
-import com.nju.edu.erp.model.po.AccountPO;
-import com.nju.edu.erp.model.vo.AccountVO;
+import com.nju.edu.erp.model.po.employee.AccountPO;
+import com.nju.edu.erp.model.vo.employee.AccountVO;
 import com.nju.edu.erp.service.AccountService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

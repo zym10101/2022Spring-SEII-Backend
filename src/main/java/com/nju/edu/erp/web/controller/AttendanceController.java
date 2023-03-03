@@ -1,8 +1,7 @@
 package com.nju.edu.erp.web.controller;
 
-import com.nju.edu.erp.model.po.EmployeeAttendanceIODetailPO;
-import com.nju.edu.erp.model.po.EmployeePO;
-import com.nju.edu.erp.model.vo.AttendanceVO;
+import com.nju.edu.erp.model.po.employee.EmployeeAttendanceIODetailPO;
+import com.nju.edu.erp.model.vo.employee.AttendanceVO;
 import com.nju.edu.erp.service.AttendanceService;
 import com.nju.edu.erp.web.Response;
 import org.springframework.beans.factory.annotation.Autowired;

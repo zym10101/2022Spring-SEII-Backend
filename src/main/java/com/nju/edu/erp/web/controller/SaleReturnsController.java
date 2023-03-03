@@ -3,7 +3,7 @@ package com.nju.edu.erp.web.controller;
 import com.nju.edu.erp.auth.Authorized;
 import com.nju.edu.erp.enums.Role;
 import com.nju.edu.erp.enums.sheetState.SaleReturnsSheetState;
-import com.nju.edu.erp.model.vo.UserVO;
+import com.nju.edu.erp.model.vo.user.UserVO;
 import com.nju.edu.erp.model.vo.saleReturns.SaleReturnsSheetVO;
 import com.nju.edu.erp.service.SaleReturnsService;
 import com.nju.edu.erp.web.Response;

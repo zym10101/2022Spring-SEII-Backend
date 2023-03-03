@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nju.edu.erp.dao.WarehouseInputSheetDao">
-    <insert id="save" parameterType="com.nju.edu.erp.model.po.WarehouseInputSheetPO">
+    <insert id="save" parameterType="com.nju.edu.erp.model.po.warehouse.WarehouseInputSheetPO">
         insert into warehouse_input_sheet (id, batch_id, operator, create_time, purchase_sheet_id, state)
         values (#{id}, #{batchId}, #{operator}, #{createTime}, #{purchaseSheetId}, #{state})
     </insert>
@@ -42,13 +42,13 @@
         from warehouse_input_sheet;
     </select>
 
-    <select id="getSheet" resultType="com.nju.edu.erp.model.po.WarehouseInputSheetPO">
+    <select id="getSheet" resultType="com.nju.edu.erp.model.po.warehouse.WarehouseInputSheetPO">
         select *
         from warehouse_input_sheet
         where id = #{id};
     </select>
 
-    <select id="getAllContentById" resultType="com.nju.edu.erp.model.po.WarehouseInputSheetContentPO">
+    <select id="getAllContentById" resultType="com.nju.edu.erp.model.po.warehouse.WarehouseInputSheetContentPO">
         select *
         from warehouse_input_sheet_content
         where wi_id = #{warehouseInputSheetId};
@@ -61,7 +61,7 @@
     1.结果集与WarehouseIODetailPO对应，格式为：type(有"warehouse_input"和"warehouse_output"两个值),sheet_id,product_name,category_name,quantity,unit_price,total_price,create_time
     2.出入库单状态必须为"审批完成",才算是完成一次出库或者入库操作
     -->
-    <select id="getWarehouseIODetailByTime" resultType="com.nju.edu.erp.model.po.WarehouseIODetailPO">
+    <select id="getWarehouseIODetailByTime" resultType="com.nju.edu.erp.model.po.warehouse.WarehouseIODetailPO">
         select "warehouse_input"               type,
                s.id                            sheet_id,
                p.name                          product_name,
@@ -113,7 +113,7 @@
           and s.create_time between #{beginTime} and #{endTime}
           and s.state = '审批完成';
     </select>
-    <select id="getWarehouseSpecialIODetailByTime" resultType="com.nju.edu.erp.model.po.WarehouseSpecialIODetailPO">
+    <select id="getWarehouseSpecialIODetailByTime" resultType="com.nju.edu.erp.model.po.warehouse.WarehouseSpecialIODetailPO">
         select "warehouse_byd"  type,
                s.id             sheet_id,
                p.name           product_name,
@@ -152,7 +152,7 @@
     </select>
 
 
-    <resultMap id="WarehouseInputSheetPO" type="com.nju.edu.erp.model.po.WarehouseInputSheetPO">
+    <resultMap id="WarehouseInputSheetPO" type="com.nju.edu.erp.model.po.warehouse.WarehouseInputSheetPO">
         <id column="id" property="id"></id>
         <result column="batch_id" property="batchId"></result>
         <result column="operator" property="operator"></result>
@@ -161,7 +161,7 @@
         <result column="state" property="state"></result>
     </resultMap>
 
-    <resultMap id="WarehouseIODetailPO" type="com.nju.edu.erp.model.po.WarehouseIODetailPO">
+    <resultMap id="WarehouseIODetailPO" type="com.nju.edu.erp.model.po.warehouse.WarehouseIODetailPO">
         <result column="type" property="type"></result>
         <result column="sheet_id" property="sheetId"></result>
         <result column="product_name" property="productName"></result>

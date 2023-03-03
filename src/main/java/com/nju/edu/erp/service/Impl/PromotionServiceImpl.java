@@ -1,12 +1,11 @@
 package com.nju.edu.erp.service.Impl;
 
 import com.nju.edu.erp.dao.PromotionDao;
-import com.nju.edu.erp.model.po.TotalAmountPromotionPO;
-import com.nju.edu.erp.model.po.UserLevelPromotionPO;
+import com.nju.edu.erp.model.po.promotion.TotalAmountPromotionPO;
+import com.nju.edu.erp.model.po.promotion.UserLevelPromotionPO;
 import com.nju.edu.erp.service.PromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

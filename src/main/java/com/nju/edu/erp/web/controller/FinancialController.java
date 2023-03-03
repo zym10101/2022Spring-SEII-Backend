@@ -1,11 +1,9 @@
 package com.nju.edu.erp.web.controller;
 
 import com.nju.edu.erp.auth.Authorized;
-import com.nju.edu.erp.enums.CustomerType;
 import com.nju.edu.erp.enums.Role;
-import com.nju.edu.erp.model.po.PayReceiveSheetIODetailPO;
-import com.nju.edu.erp.model.po.WageSheetPO;
-import com.nju.edu.erp.service.CustomerService;
+import com.nju.edu.erp.model.po.pay.PayReceiveSheetIODetailPO;
+import com.nju.edu.erp.model.po.salary.WageSheetPO;
 import com.nju.edu.erp.service.FinancialService;
 import com.nju.edu.erp.web.Response;
 import org.springframework.beans.factory.annotation.Autowired;

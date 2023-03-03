@@ -26,37 +26,37 @@
         and state = #{prev}
     </update>
 
-    <select id="getLatestSheet" resultType="com.nju.edu.erp.model.po.PaySheetPO">
+    <select id="getLatestSheet" resultType="com.nju.edu.erp.model.po.pay.PaySheetPO">
         select *
         from pay_sheet
         order by id desc
         limit 0,1;
     </select>
 
-    <select id="findAllSheet" resultType="com.nju.edu.erp.model.po.PaySheetPO">
+    <select id="findAllSheet" resultType="com.nju.edu.erp.model.po.pay.PaySheetPO">
         select *
         from pay_sheet;
     </select>
 
-    <select id="findAllByState" resultType="com.nju.edu.erp.model.po.PaySheetPO">
+    <select id="findAllByState" resultType="com.nju.edu.erp.model.po.pay.PaySheetPO">
         select *
         from pay_sheet
         where state = #{state}
     </select>
 
-    <select id="findContentBySheetId" resultType="com.nju.edu.erp.model.po.PaySheetContentPO">
+    <select id="findContentBySheetId" resultType="com.nju.edu.erp.model.po.pay.PaySheetContentPO">
         select *
         from pay_sheet_content
         where pay_sheet_id = #{sheetId};
     </select>
 
-    <select id="findSheetById" resultType="com.nju.edu.erp.model.po.PaySheetPO">
+    <select id="findSheetById" resultType="com.nju.edu.erp.model.po.pay.PaySheetPO">
         select *
         from pay_sheet
         where id = #{id};
     </select>
 
-    <resultMap id="PaySheetPO" type="com.nju.edu.erp.model.po.PaySheetPO">
+    <resultMap id="PaySheetPO" type="com.nju.edu.erp.model.po.pay.PaySheetPO">
         <id column="id" property="id"></id>
         <result column="customer" property="customer"></result>
         <result column="operator" property="operator"></result>

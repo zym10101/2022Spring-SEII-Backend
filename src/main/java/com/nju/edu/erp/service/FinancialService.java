@@ -1,7 +1,7 @@
 package com.nju.edu.erp.service;
 
-import com.nju.edu.erp.model.po.PayReceiveSheetIODetailPO;
-import com.nju.edu.erp.model.po.WageSheetPO;
+import com.nju.edu.erp.model.po.pay.PayReceiveSheetIODetailPO;
+import com.nju.edu.erp.model.po.salary.WageSheetPO;
 
 import java.util.List;
 

@@ -1,9 +1,8 @@
 package com.nju.edu.erp.service;
 
 import com.nju.edu.erp.enums.sheetState.PurchaseSheetState;
-import com.nju.edu.erp.model.po.PurchaseSheetIODetailPO;
-import com.nju.edu.erp.model.po.SaleSheetIODetailPO;
-import com.nju.edu.erp.model.vo.UserVO;
+import com.nju.edu.erp.model.po.purchaseIO.PurchaseSheetIODetailPO;
+import com.nju.edu.erp.model.vo.user.UserVO;
 import com.nju.edu.erp.model.vo.purchase.PurchaseSheetVO;
 
 import java.text.ParseException;

@@ -2,7 +2,7 @@ package com.nju.edu.erp.dao;
 
 
 import com.nju.edu.erp.enums.sheetState.WageSheetState;
-import com.nju.edu.erp.model.po.WageSheetPO;
+import com.nju.edu.erp.model.po.salary.WageSheetPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

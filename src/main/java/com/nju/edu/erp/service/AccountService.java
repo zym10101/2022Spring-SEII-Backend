@@ -1,7 +1,7 @@
 package com.nju.edu.erp.service;
 
-import com.nju.edu.erp.model.po.AccountPO;
-import com.nju.edu.erp.model.vo.AccountVO;
+import com.nju.edu.erp.model.po.employee.AccountPO;
+import com.nju.edu.erp.model.vo.employee.AccountVO;
 
 import java.util.List;
 

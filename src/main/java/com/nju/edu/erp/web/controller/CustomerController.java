@@ -1,7 +1,7 @@
 package com.nju.edu.erp.web.controller;
 
 import com.nju.edu.erp.enums.CustomerType;
-import com.nju.edu.erp.model.vo.CustomerVO;
+import com.nju.edu.erp.model.vo.customer.CustomerVO;
 import com.nju.edu.erp.service.CustomerService;
 import com.nju.edu.erp.web.Response;
 import org.springframework.beans.factory.annotation.Autowired;

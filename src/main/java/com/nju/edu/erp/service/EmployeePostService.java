@@ -1,15 +1,14 @@
 package com.nju.edu.erp.service;
-import com.nju.edu.erp.model.po.BaseAndCommissionPO;
-import com.nju.edu.erp.model.po.EmployeePostPO;
-import com.nju.edu.erp.model.po.MonthlyPayPO;
-import com.nju.edu.erp.model.po.YearlyPayPO;
-import com.nju.edu.erp.model.vo.BaseAndCommissionVO;
-import com.nju.edu.erp.model.vo.EmployeePostVO;
-import com.nju.edu.erp.model.vo.MonthlyPayVO;
-import com.nju.edu.erp.model.vo.YearlyPayVO;
+import com.nju.edu.erp.model.po.salary.BaseAndCommissionPO;
+import com.nju.edu.erp.model.po.employee.EmployeePostPO;
+import com.nju.edu.erp.model.po.salary.MonthlyPayPO;
+import com.nju.edu.erp.model.po.salary.YearlyPayPO;
+import com.nju.edu.erp.model.vo.salary.BaseAndCommissionVO;
+import com.nju.edu.erp.model.vo.employee.EmployeePostVO;
+import com.nju.edu.erp.model.vo.salary.MonthlyPayVO;
+import com.nju.edu.erp.model.vo.salary.YearlyPayVO;
 
 import java.text.ParseException;
-import java.util.Date;
 
 public interface EmployeePostService {
 

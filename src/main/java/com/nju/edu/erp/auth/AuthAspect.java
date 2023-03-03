@@ -1,11 +1,8 @@
 package com.nju.edu.erp.auth;
 
-import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.auth0.jwt.interfaces.Claim;
 import com.nju.edu.erp.config.JwtConfig;
 import com.nju.edu.erp.exception.MyServiceException;
-import com.nju.edu.erp.model.po.User;
-import com.nju.edu.erp.model.vo.UserVO;
+import com.nju.edu.erp.model.vo.user.UserVO;
 import com.nju.edu.erp.service.UserService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;

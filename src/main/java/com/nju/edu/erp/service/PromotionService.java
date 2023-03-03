@@ -1,9 +1,8 @@
 package com.nju.edu.erp.service;
 
-import com.nju.edu.erp.model.po.TotalAmountPromotionPO;
-import com.nju.edu.erp.model.po.UserLevelPromotionPO;
+import com.nju.edu.erp.model.po.promotion.TotalAmountPromotionPO;
+import com.nju.edu.erp.model.po.promotion.UserLevelPromotionPO;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 /**

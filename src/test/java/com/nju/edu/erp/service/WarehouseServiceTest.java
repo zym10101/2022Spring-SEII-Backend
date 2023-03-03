@@ -3,7 +3,7 @@ package com.nju.edu.erp.service;
 
 
 
-import com.nju.edu.erp.model.po.WarehouseIODetailPO;
+import com.nju.edu.erp.model.po.warehouse.WarehouseIODetailPO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

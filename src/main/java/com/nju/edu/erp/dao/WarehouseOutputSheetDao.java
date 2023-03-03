@@ -1,10 +1,9 @@
 package com.nju.edu.erp.dao;
 
 import com.nju.edu.erp.enums.sheetState.WarehouseOutputSheetState;
-import com.nju.edu.erp.model.po.WarehouseOutputSheetContentPO;
-import com.nju.edu.erp.model.po.WarehouseOutputSheetPO;
-import com.nju.edu.erp.model.po.WarehousePO;
-import com.nju.edu.erp.model.po.WarehouseZSDPO;
+import com.nju.edu.erp.model.po.warehouse.WarehouseOutputSheetContentPO;
+import com.nju.edu.erp.model.po.warehouse.WarehouseOutputSheetPO;
+import com.nju.edu.erp.model.po.warehouse.WarehouseZSDPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

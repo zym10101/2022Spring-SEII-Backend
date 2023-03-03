@@ -2,14 +2,11 @@ package com.nju.edu.erp.CategoryTest;
 
 
 import com.nju.edu.erp.dao.ProductDao;
-import com.nju.edu.erp.model.po.ProductPO;
-import com.nju.edu.erp.model.vo.CreateProductVO;
+import com.nju.edu.erp.model.po.product.ProductPO;
 import com.nju.edu.erp.service.ProductService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.math.BigDecimal;
 
 @SpringBootTest
 public class ProductTests {

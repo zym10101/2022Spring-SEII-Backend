@@ -1,6 +1,6 @@
 package com.nju.edu.erp.service;
 
-import com.nju.edu.erp.model.vo.UserVO;
+import com.nju.edu.erp.model.vo.user.UserVO;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

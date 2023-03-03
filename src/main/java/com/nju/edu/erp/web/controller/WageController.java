@@ -3,16 +3,14 @@ package com.nju.edu.erp.web.controller;
 
 import com.nju.edu.erp.auth.Authorized;
 import com.nju.edu.erp.enums.Role;
-import com.nju.edu.erp.enums.sheetState.SaleSheetState;
 import com.nju.edu.erp.enums.sheetState.WageSheetState;
-import com.nju.edu.erp.model.vo.UserVO;
-import com.nju.edu.erp.model.vo.WageSheetVO;
+import com.nju.edu.erp.model.vo.user.UserVO;
+import com.nju.edu.erp.model.vo.salary.WageSheetVO;
 import com.nju.edu.erp.service.WageService;
 import com.nju.edu.erp.web.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
 import java.text.ParseException;
 
 @RestController

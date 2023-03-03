@@ -6,7 +6,7 @@
         values (#{id}, #{bankAccount}, #{position}, #{salaryCalculationStrategy})
     </insert>
 
-    <update id="updateEmployeePostSql" parameterType="com.nju.edu.erp.model.po.EmployeePostPO">
+    <update id="updateEmployeePostSql" parameterType="com.nju.edu.erp.model.po.employee.EmployeePostPO">
         update employee_post
         <set>
             <if test="bankAccount != null">
@@ -28,7 +28,7 @@
         where id = #{id}
     </delete>
 
-    <select id="findEmployeePostById" resultType="com.nju.edu.erp.model.po.EmployeePostPO">
+    <select id="findEmployeePostById" resultType="com.nju.edu.erp.model.po.employee.EmployeePostPO">
         select *
         from employee_post
         where `id` = #{id}
@@ -58,7 +58,7 @@
         values (#{id}, #{baseSalary}, #{postSalary}, #{postRank})
     </insert>
 
-    <insert id="setBaseAndCommissionParaSql" parameterType="com.nju.edu.erp.model.po.BaseAndCommissionPO">
+    <insert id="setBaseAndCommissionParaSql" parameterType="com.nju.edu.erp.model.po.salary.BaseAndCommissionPO">
         insert into base_and_commission (`id`, `base_salary`, `commission_rate`, `actual_sales`)
         values (#{id}, #{baseSalary}, #{commissionRate}, #{actualSales})
     </insert>
@@ -68,25 +68,25 @@
         values (#{id}, #{yearlySalary})
     </insert>
 
-    <select id="getMonthlyParaSql" resultType="com.nju.edu.erp.model.po.MonthlyPayPO">
+    <select id="getMonthlyParaSql" resultType="com.nju.edu.erp.model.po.salary.MonthlyPayPO">
         select *
         from monthly_pay
         where `id` = #{id}
     </select>
 
-    <select id="getBaseAndCommissionParaSql" resultType="com.nju.edu.erp.model.po.BaseAndCommissionPO">
+    <select id="getBaseAndCommissionParaSql" resultType="com.nju.edu.erp.model.po.salary.BaseAndCommissionPO">
         select *
         from base_and_commission
         where `id` = #{id}
     </select>
 
-    <select id="getYearlyParaSql" resultType="com.nju.edu.erp.model.po.YearlyPayPO">
+    <select id="getYearlyParaSql" resultType="com.nju.edu.erp.model.po.salary.YearlyPayPO">
         select *
         from yearly_pay
         where `id` = #{id}
     </select>
 
-    <update id="updateMonthlyParaSql" parameterType="com.nju.edu.erp.model.po.MonthlyPayPO">
+    <update id="updateMonthlyParaSql" parameterType="com.nju.edu.erp.model.po.salary.MonthlyPayPO">
         update monthly_pay
         <set>
             <if test="baseSalary != null">
@@ -102,7 +102,7 @@
         where id = #{id}
     </update>
 
-    <update id="updateBaseAndCommissionParaSql" parameterType="com.nju.edu.erp.model.po.BaseAndCommissionPO">
+    <update id="updateBaseAndCommissionParaSql" parameterType="com.nju.edu.erp.model.po.salary.BaseAndCommissionPO">
         update base_and_commission
         <set>
             <if test="baseSalary != null">
@@ -118,7 +118,7 @@
         where id = #{id}
     </update>
 
-    <update id="updateYearlyParaSql" parameterType="com.nju.edu.erp.model.po.YearlyPayPO">
+    <update id="updateYearlyParaSql" parameterType="com.nju.edu.erp.model.po.salary.YearlyPayPO">
         update yearly_pay
         <set>
             <if test="yearlySalary != null">

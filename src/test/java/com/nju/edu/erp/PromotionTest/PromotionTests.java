@@ -1,7 +1,7 @@
 package com.nju.edu.erp.PromotionTest;
 
 import com.nju.edu.erp.dao.PromotionDao;
-import com.nju.edu.erp.model.po.TotalAmountPromotionPO;
+import com.nju.edu.erp.model.po.promotion.TotalAmountPromotionPO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

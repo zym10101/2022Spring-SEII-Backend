@@ -28,7 +28,7 @@
     <!--    <delete id="deleteById">-->
     <!--        delete from category where id = #{id}-->
     <!--    </delete>-->
-    <update id="updateOne" parameterType="com.nju.edu.erp.model.po.CustomerPO">
+    <update id="updateOne" parameterType="com.nju.edu.erp.model.po.customer.CustomerPO">
         update customer
         <set>
             <if test="type != null">
@@ -62,13 +62,13 @@
         where id = #{id}
     </update>
 
-    <select id="findOneById" resultType="com.nju.edu.erp.model.po.CustomerPO">
+    <select id="findOneById" resultType="com.nju.edu.erp.model.po.customer.CustomerPO">
         select *
         from customer
         where id = #{supplier}
     </select>
 
-    <select id="findAllByType" resultType="com.nju.edu.erp.model.po.CustomerPO">
+    <select id="findAllByType" resultType="com.nju.edu.erp.model.po.customer.CustomerPO">
         select *
         from customer
         where `type` = #{type}
@@ -84,7 +84,7 @@
     </delete>
 
 
-    <resultMap id="CustomerPO" type="com.nju.edu.erp.model.po.CustomerPO">
+    <resultMap id="CustomerPO" type="com.nju.edu.erp.model.po.customer.CustomerPO">
         <id column="id" property="id"></id>
         <result column="type" property="type"></result>
         <result column="level" property="level"></result>

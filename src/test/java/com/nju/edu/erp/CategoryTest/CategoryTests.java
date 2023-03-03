@@ -1,8 +1,8 @@
 package com.nju.edu.erp.CategoryTest;
 
 import com.nju.edu.erp.dao.CategoryDao;
-import com.nju.edu.erp.model.po.CategoryPO;
-import com.nju.edu.erp.model.vo.CategoryVO;
+import com.nju.edu.erp.model.po.product.CategoryPO;
+import com.nju.edu.erp.model.vo.product.CategoryVO;
 import com.nju.edu.erp.service.Impl.CategoryServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;

@@ -21,14 +21,14 @@
         where total_amount_min = #{totalAmountMin};
     </update>
 
-    <resultMap id="UserLevelPromotionPO" type="com.nju.edu.erp.model.po.UserLevelPromotionPO">
+    <resultMap id="UserLevelPromotionPO" type="com.nju.edu.erp.model.po.promotion.UserLevelPromotionPO">
         <result column="user_level" property="userLevel"></result>
         <result column="gift_name" property="giftName"></result>
         <result column="discount" property="discount"></result>
         <result column="voucher" property="voucher"></result>
     </resultMap>
 
-    <resultMap id="TotalAmountPromotionPO" type="com.nju.edu.erp.model.po.TotalAmountPromotionPO">
+    <resultMap id="TotalAmountPromotionPO" type="com.nju.edu.erp.model.po.promotion.TotalAmountPromotionPO">
         <result column="total_amount_min" property="totalAmountMin"></result>
         <result column="gift_name" property="giftName"></result>
         <result column="voucher" property="voucher"></result>

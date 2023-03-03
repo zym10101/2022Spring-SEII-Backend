@@ -1,8 +1,8 @@
 package com.nju.edu.erp.dao;
 
 import com.nju.edu.erp.enums.sheetState.PurchaseReturnsSheetState;
-import com.nju.edu.erp.model.po.PurchaseReturnsSheetContentPO;
-import com.nju.edu.erp.model.po.PurchaseReturnsSheetPO;
+import com.nju.edu.erp.model.po.purchaseReturn.PurchaseReturnsSheetContentPO;
+import com.nju.edu.erp.model.po.purchaseReturn.PurchaseReturnsSheetPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

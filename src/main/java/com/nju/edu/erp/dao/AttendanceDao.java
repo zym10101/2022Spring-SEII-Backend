@@ -1,7 +1,7 @@
 package com.nju.edu.erp.dao;
 
-import com.nju.edu.erp.model.po.AttendancePO;
-import com.nju.edu.erp.model.po.EmployeeAttendanceIODetailPO;
+import com.nju.edu.erp.model.po.employee.AttendancePO;
+import com.nju.edu.erp.model.po.employee.EmployeeAttendanceIODetailPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

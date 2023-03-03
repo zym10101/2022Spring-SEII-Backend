@@ -2,10 +2,10 @@ package com.nju.edu.erp.service.Impl;
 
 import com.nju.edu.erp.dao.AttendanceDao;
 import com.nju.edu.erp.dao.EmployeePostDao;
-import com.nju.edu.erp.model.po.AttendancePO;
-import com.nju.edu.erp.model.po.EmployeeAttendanceIODetailPO;
-import com.nju.edu.erp.model.po.EmployeePostPO;
-import com.nju.edu.erp.model.vo.AttendanceVO;
+import com.nju.edu.erp.model.po.employee.AttendancePO;
+import com.nju.edu.erp.model.po.employee.EmployeeAttendanceIODetailPO;
+import com.nju.edu.erp.model.po.employee.EmployeePostPO;
+import com.nju.edu.erp.model.vo.employee.AttendanceVO;
 import com.nju.edu.erp.service.AttendanceService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.nju.edu.erp.web.controller;
 
-import com.nju.edu.erp.model.po.*;
-import com.nju.edu.erp.model.vo.EmployeeVO;
+import com.nju.edu.erp.model.po.employee.*;
+import com.nju.edu.erp.model.vo.employee.EmployeeVO;
 import com.nju.edu.erp.dao.EmployeeDao;
 import com.nju.edu.erp.service.EmployeeService;
 import com.nju.edu.erp.web.Response;

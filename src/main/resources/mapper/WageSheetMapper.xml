@@ -19,31 +19,31 @@
           and state = #{prev}
     </update>
 
-    <select id="getLatestSheet" resultType="com.nju.edu.erp.model.po.WageSheetPO">
+    <select id="getLatestSheet" resultType="com.nju.edu.erp.model.po.salary.WageSheetPO">
         select *
         from wage_sheet
         order by id desc
         limit 0,1;
     </select>
 
-    <select id="findAllSheet" resultType="com.nju.edu.erp.model.po.WageSheetPO">
+    <select id="findAllSheet" resultType="com.nju.edu.erp.model.po.salary.WageSheetPO">
         select *
         from wage_sheet;
     </select>
 
-    <select id="findAllByState" resultType="com.nju.edu.erp.model.po.WageSheetPO">
+    <select id="findAllByState" resultType="com.nju.edu.erp.model.po.salary.WageSheetPO">
         select *
         from wage_sheet
         where state = #{state}
     </select>
 
-    <select id="findSheetById" resultType="com.nju.edu.erp.model.po.WageSheetPO">
+    <select id="findSheetById" resultType="com.nju.edu.erp.model.po.salary.WageSheetPO">
         select *
         from wage_sheet
         where id = #{id};
     </select>
 
-    <resultMap id="WageSheetPO" type="com.nju.edu.erp.model.po.WageSheetPO">
+    <resultMap id="WageSheetPO" type="com.nju.edu.erp.model.po.salary.WageSheetPO">
         <id column="id" property="id"></id>
         <result column="employee_id" property="employeeId"></result>
         <result column="name" property="name"></result>

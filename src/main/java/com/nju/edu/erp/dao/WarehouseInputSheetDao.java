@@ -1,7 +1,10 @@
 package com.nju.edu.erp.dao;
 
 import com.nju.edu.erp.enums.sheetState.WarehouseInputSheetState;
-import com.nju.edu.erp.model.po.*;
+import com.nju.edu.erp.model.po.warehouse.WarehouseIODetailPO;
+import com.nju.edu.erp.model.po.warehouse.WarehouseInputSheetContentPO;
+import com.nju.edu.erp.model.po.warehouse.WarehouseInputSheetPO;
+import com.nju.edu.erp.model.po.warehouse.WarehouseSpecialIODetailPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -65,7 +68,7 @@ public interface WarehouseInputSheetDao {
      * @param beginTime
      * @param endTime
      */
-    List<WarehouseIODetailPO> getWarehouseIODetailByTime(Date beginTime,Date endTime);
+    List<WarehouseIODetailPO> getWarehouseIODetailByTime(Date beginTime, Date endTime);
 
 
     /**

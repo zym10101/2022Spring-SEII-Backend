@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nju.edu.erp.dao.WarehouseOutputSheetDao">
-    <insert id="save" parameterType="com.nju.edu.erp.model.po.WarehouseOutputSheetPO">
+    <insert id="save" parameterType="com.nju.edu.erp.model.po.warehouse.WarehouseOutputSheetPO">
         insert into warehouse_output_sheet (id, operator, create_time, `state`, sale_sheet_id)
         values (#{id}, #{operator}, #{createTime}, #{state}, #{saleSheetId})
     </insert>
@@ -49,30 +49,30 @@
           and s.state = '审批完成';
     </select>
 
-    <select id="getAllSheets" resultType="com.nju.edu.erp.model.po.WarehouseOutputSheetPO">
+    <select id="getAllSheets" resultType="com.nju.edu.erp.model.po.warehouse.WarehouseOutputSheetPO">
         select *
         from warehouse_output_sheet;
     </select>
 
-    <select id="getDraftSheets" resultType="com.nju.edu.erp.model.po.WarehouseOutputSheetPO">
+    <select id="getDraftSheets" resultType="com.nju.edu.erp.model.po.warehouse.WarehouseOutputSheetPO">
         select *
         from warehouse_output_sheet
         where `state` = #{state};
     </select>
 
-    <select id="getSheet" resultType="com.nju.edu.erp.model.po.WarehouseOutputSheetPO">
+    <select id="getSheet" resultType="com.nju.edu.erp.model.po.warehouse.WarehouseOutputSheetPO">
         select *
         from warehouse_output_sheet
         where id = #{sheetId};
     </select>
 
-    <select id="getAllContentById" resultType="com.nju.edu.erp.model.po.WarehouseOutputSheetContentPO">
+    <select id="getAllContentById" resultType="com.nju.edu.erp.model.po.warehouse.WarehouseOutputSheetContentPO">
         select *
         from warehouse_output_sheet_content
         where wo_id = #{sheetId};
     </select>
 
-    <resultMap id="WarehouseOutputSheetPO" type="com.nju.edu.erp.model.po.WarehouseOutputSheetPO">
+    <resultMap id="WarehouseOutputSheetPO" type="com.nju.edu.erp.model.po.warehouse.WarehouseOutputSheetPO">
         <id column="id" property="id"></id>
         <result column="operator" property="operator"></result>
         <result column="create_time" property="createTime"></result>
@@ -85,14 +85,14 @@
                 #{productionDate}, #{remark});
     </insert>
 
-    <select id="getGiftLatest" resultType="com.nju.edu.erp.model.po.WarehouseZSDPO">
+    <select id="getGiftLatest" resultType="com.nju.edu.erp.model.po.warehouse.WarehouseZSDPO">
         select *
         from warehouse_zsd_sheet
         order by id desc
         limit 0,1;
     </select>
 
-    <select id="getWarehousePresent" resultType="com.nju.edu.erp.model.po.WarehouseZSDPO">
+    <select id="getWarehousePresent" resultType="com.nju.edu.erp.model.po.warehouse.WarehouseZSDPO">
         select *
         from warehouse_zsd_sheet;
     </select>

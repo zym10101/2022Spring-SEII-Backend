@@ -17,19 +17,19 @@
         values (#{id}, #{yearlySalary})
     </insert>
 
-    <select id="getMonthlyInfo" resultType="com.nju.edu.erp.model.po.MonthlyPayPO">
+    <select id="getMonthlyInfo" resultType="com.nju.edu.erp.model.po.salary.MonthlyPayPO">
         select *
         from monthly_pay
         where `id` = #{id}
     </select>
 
-    <select id="getBaseAndCommissionInfo" resultType="com.nju.edu.erp.model.po.BaseAndCommissionPO">
+    <select id="getBaseAndCommissionInfo" resultType="com.nju.edu.erp.model.po.salary.BaseAndCommissionPO">
         select *
         from base_and_commission
         where `id` = #{id}
     </select>
 
-    <select id="getYearlyInfo" resultType="com.nju.edu.erp.model.po.YearlyPayPO">
+    <select id="getYearlyInfo" resultType="com.nju.edu.erp.model.po.salary.YearlyPayPO">
         select *
         from yearly_pay
         where `id` = #{id}

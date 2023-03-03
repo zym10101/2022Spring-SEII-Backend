@@ -1,8 +1,8 @@
 package com.nju.edu.erp.web.controller;
 
-import com.nju.edu.erp.model.vo.BaseAndCommissionVO;
-import com.nju.edu.erp.model.vo.MonthlyPayVO;
-import com.nju.edu.erp.model.vo.YearlyPayVO;
+import com.nju.edu.erp.model.vo.salary.BaseAndCommissionVO;
+import com.nju.edu.erp.model.vo.salary.MonthlyPayVO;
+import com.nju.edu.erp.model.vo.salary.YearlyPayVO;
 import com.nju.edu.erp.service.SalaryStrategyService;
 import com.nju.edu.erp.web.Response;
 import org.springframework.beans.factory.annotation.Autowired;

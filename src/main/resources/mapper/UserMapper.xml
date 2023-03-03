@@ -15,13 +15,13 @@
     </select>
 
 
-    <insert id="createUser" parameterType="com.nju.edu.erp.model.po.User" useGeneratedKeys="true" keyProperty="id">
+    <insert id="createUser" parameterType="com.nju.edu.erp.model.po.user.User" useGeneratedKeys="true" keyProperty="id">
         insert into user (password, `name`, `role`)
         values (#{password}, #{name}, #{role})
     </insert>
 
 
-    <resultMap id="User" type="com.nju.edu.erp.model.po.User">
+    <resultMap id="User" type="com.nju.edu.erp.model.po.user.User">
         <id column="id" property="id"></id>
         <result column="name" property="name"></result>
         <result column="password" property="password"></result>

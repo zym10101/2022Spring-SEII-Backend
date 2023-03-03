@@ -1,9 +1,8 @@
 package com.nju.edu.erp.dao;
 
-import com.nju.edu.erp.model.po.WarehouseBSDPO;
-import com.nju.edu.erp.model.po.WarehouseBYDPO;
-import com.nju.edu.erp.model.po.WarehousePO;
-import com.nju.edu.erp.model.vo.warehouse.WarehouseCountingVO;
+import com.nju.edu.erp.model.po.warehouse.WarehouseBSDPO;
+import com.nju.edu.erp.model.po.warehouse.WarehouseBYDPO;
+import com.nju.edu.erp.model.po.warehouse.WarehousePO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

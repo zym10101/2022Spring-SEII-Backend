@@ -1,9 +1,8 @@
 package com.nju.edu.erp.service;
 
 import com.nju.edu.erp.enums.CustomerType;
-import com.nju.edu.erp.model.po.CustomerPO;
-import com.nju.edu.erp.model.vo.CustomerVO;
-import com.nju.edu.erp.model.vo.UserVO;
+import com.nju.edu.erp.model.po.customer.CustomerPO;
+import com.nju.edu.erp.model.vo.customer.CustomerVO;
 
 import java.util.List;
 

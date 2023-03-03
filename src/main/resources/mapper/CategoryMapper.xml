@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nju.edu.erp.dao.CategoryDao">
-    <insert id="createCategory" parameterType="com.nju.edu.erp.model.po.CategoryPO" useGeneratedKeys="true" keyProperty="id">
+    <insert id="createCategory" parameterType="com.nju.edu.erp.model.po.product.CategoryPO" useGeneratedKeys="true" keyProperty="id">
         insert into category (`name`, parent_id, is_leaf, item_count, item_index)
         values (#{name}, #{parentId}, #{isLeaf}, #{itemCount}, #{itemIndex})
     </insert>
@@ -17,7 +17,7 @@
         from category
     </select>
 
-    <update id="updateById" parameterType="com.nju.edu.erp.model.po.CategoryPO">
+    <update id="updateById" parameterType="com.nju.edu.erp.model.po.product.CategoryPO">
         update category
         <set>
             <if test="name != null">
@@ -42,7 +42,7 @@
         where id = #{id}
     </delete>
 
-    <resultMap id="CategoryPO" type="com.nju.edu.erp.model.po.CategoryPO">
+    <resultMap id="CategoryPO" type="com.nju.edu.erp.model.po.product.CategoryPO">
         <id column="id" property="id"></id>
         <result column="name" property="name"></result>
         <result column="parent_id" property="parentId"></result>

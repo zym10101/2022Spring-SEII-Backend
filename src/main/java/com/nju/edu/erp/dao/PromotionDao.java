@@ -1,7 +1,7 @@
 package com.nju.edu.erp.dao;
 
-import com.nju.edu.erp.model.po.TotalAmountPromotionPO;
-import com.nju.edu.erp.model.po.UserLevelPromotionPO;
+import com.nju.edu.erp.model.po.promotion.TotalAmountPromotionPO;
+import com.nju.edu.erp.model.po.promotion.UserLevelPromotionPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

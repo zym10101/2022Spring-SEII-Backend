@@ -2,8 +2,8 @@ package com.nju.edu.erp.service.Impl;
 
 import com.nju.edu.erp.dao.CategoryDao;
 import com.nju.edu.erp.exception.MyServiceException;
-import com.nju.edu.erp.model.po.CategoryPO;
-import com.nju.edu.erp.model.vo.CategoryVO;
+import com.nju.edu.erp.model.po.product.CategoryPO;
+import com.nju.edu.erp.model.vo.product.CategoryVO;
 import com.nju.edu.erp.service.CategoryService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

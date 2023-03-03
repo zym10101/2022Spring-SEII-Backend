@@ -2,12 +2,12 @@ package com.nju.edu.erp.service.Impl;
 
 import com.nju.edu.erp.dao.SalaryStrategyDao;
 import com.nju.edu.erp.exception.MyServiceException;
-import com.nju.edu.erp.model.po.BaseAndCommissionPO;
-import com.nju.edu.erp.model.po.MonthlyPayPO;
-import com.nju.edu.erp.model.po.YearlyPayPO;
-import com.nju.edu.erp.model.vo.BaseAndCommissionVO;
-import com.nju.edu.erp.model.vo.MonthlyPayVO;
-import com.nju.edu.erp.model.vo.YearlyPayVO;
+import com.nju.edu.erp.model.po.salary.BaseAndCommissionPO;
+import com.nju.edu.erp.model.po.salary.MonthlyPayPO;
+import com.nju.edu.erp.model.po.salary.YearlyPayPO;
+import com.nju.edu.erp.model.vo.salary.BaseAndCommissionVO;
+import com.nju.edu.erp.model.vo.salary.MonthlyPayVO;
+import com.nju.edu.erp.model.vo.salary.YearlyPayVO;
 import com.nju.edu.erp.service.SalaryStrategyService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
