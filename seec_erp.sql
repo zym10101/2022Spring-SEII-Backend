@@ -13,7 +13,8 @@
 
  Date: 03/03/2023 14:05:59
 */
-
+create database seec_erp;
+use seec_erp;
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
